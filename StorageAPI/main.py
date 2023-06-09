@@ -42,7 +42,10 @@ failsafe_post = {
 # f.write(json.dumps(test_post_2))
 # f.close()
 
+
 def load(post_id):
+    post_id = int(post_id)
+
     f = open("post_data.txt", "r")
     data = json.dumps(failsafe_post)
 
@@ -101,15 +104,15 @@ def save(title, body, author):
 
 # This loop is only used for local testing, and should be commented out in pushed builds
 # If it isn't, tell Brabygg he's an idiot
-while True:
-    i = input("Save, load or exit? (s/l/e)")
-    if i == 'l':
-        i = input("ID to load: ")
-        print(load(int(i)))
-    elif i == 's':
-        t = input("Post title: ")
-        b = input("Post body: ")
-        a = input("Post author: ")
-        save(t, b, a)
-    elif i == 'e':
-        break
+#while True:
+#    i = input("Save, load or exit? (s/l/e)")
+#    if i == 'l':
+#        i = input("ID to load: ")
+#        print(load(int(i)))
+#    elif i == 's':
+#        t = input("Post title: ")
+#        b = input("Post body: ")
+#        a = input("Post author: ")
+#        save(t, b, a)
+#    elif i == 'e':
+#        break
